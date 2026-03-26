@@ -10,6 +10,12 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get update && apt-get install -y \
     python3 python3-pip python3-venv
 
+# Java 21
+RUN apt-get install -y extrepo
+RUN extrepo enable zulu-openjdk
+RUN apt-get update
+RUN apt-get install -y zulu21-jdk
+
 #RUN useradd -ms /bin/bash dev
 USER node
 
