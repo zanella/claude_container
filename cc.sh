@@ -29,6 +29,7 @@ else
         -e CONTAINER_WORKDIR="/workspace/$FOLDER_NAME" \
         -v "$HOME/.claude:/home/$CONTAINER_INTERNAL_USER/.claude" \
 	-v "$HOME/.claude.json:/home/$CONTAINER_INTERNAL_USER/.claude.json" \
+	-v /var/run/docker.sock:/var/run/docker.sock \
         -v "$PARENT_DIR:/workspace" \
         -w "/workspace/$FOLDER_NAME" \
         claude_caged /bin/bash
