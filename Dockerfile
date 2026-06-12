@@ -37,6 +37,12 @@ EOF
 RUN apt update
 RUN apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
+### Enables using docker from host
+# stat -c '%g' /var/run/docker.sock
+
+RUN addgroup -gid 971 dockerhost 
+RUN adduser node dockerhost
+
 #RUN useradd -ms /bin/bash dev
 USER node
 

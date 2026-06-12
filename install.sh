@@ -7,7 +7,8 @@ rm -f ~/.local/bin/ccc;
 
 ln -s $PWD/cc.sh ~/.local/bin/ccc;
 
-sudo chmod 666 /var/run/docker.sock;
+# https://devopscube.com/run-docker-in-docker/
+#sudo chmod 666 /var/run/docker.sock;
 
 # EOF
 
